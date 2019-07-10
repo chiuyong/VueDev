@@ -13,6 +13,7 @@
                 <v-form>
                   <v-text-field
                     v-model="name"
+                    v-model.trim="signupForm.name"
                     :error-messages="nameErrors"
                     :counter="10"
                     label="Nome"
@@ -22,6 +23,7 @@
                   ></v-text-field>
                   <v-text-field
                     v-model="email"
+                    v-model.trim="signupForm.email"
                     :error-messages="emailErrors"
                     label="E-mail"
                     required
@@ -34,6 +36,7 @@
                     type="password"
                     label="Password"
                     v-model="password"
+                    v-model.trim="signupForm.password"
                     :error-messages="passwordErrors"
                     @input="$v.password.$touch()"
                     @blur="$v.password.$touch()"
@@ -48,6 +51,7 @@
                       mask="(##)" 
                       required
                       v-model="ddd"
+                      v-model.trim="signupForm.ddd"
                       :error-messages="dddErrors"
                       @input="$v.ddd.$touch()"
                       @blur="$v.ddd.$touch()"
@@ -62,6 +66,7 @@
                       mask="#####-####" 
                       required
                       v-model="phone"
+                      v-model.trim="signupForm.phone"
                       :error-messages="phoneErrors"
                       @input="$v.phone.$touch()"
                       @blur="$v.phone.$touch()"
